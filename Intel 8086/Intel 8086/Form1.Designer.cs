@@ -43,7 +43,7 @@ namespace Intel_8085
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.HighRegisters = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@ namespace Intel_8085
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.LowRegisters = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -65,18 +65,19 @@ namespace Intel_8085
             this.FirstRegisterComboBox = new System.Windows.Forms.ComboBox();
             this.ExchangeButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.MoveButton = new System.Windows.Forms.Button();
-            this.ResetButton = new System.Windows.Forms.Button();
             this.RandomButton = new System.Windows.Forms.Button();
+            this.ResetButton = new System.Windows.Forms.Button();
+            this.MoveButton = new System.Windows.Forms.Button();
             this.Registers.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.HighRegisters.SuspendLayout();
+            this.LowRegisters.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // AXRegisterTextBox
             // 
             this.AXRegisterTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.AXRegisterTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.AXRegisterTextBox.Location = new System.Drawing.Point(42, 44);
             this.AXRegisterTextBox.Name = "AXRegisterTextBox";
             this.AXRegisterTextBox.ReadOnly = true;
@@ -124,6 +125,7 @@ namespace Intel_8085
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox3.Location = new System.Drawing.Point(42, 15);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
@@ -143,6 +145,7 @@ namespace Intel_8085
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox2.Location = new System.Drawing.Point(42, 73);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -152,6 +155,7 @@ namespace Intel_8085
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox1.Location = new System.Drawing.Point(42, 102);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -236,23 +240,23 @@ namespace Intel_8085
             this.label7.TabIndex = 10;
             this.label7.Text = "AX";
             // 
-            // panel2
+            // HighRegisters
             // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.textBox12);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.textBox13);
-            this.panel2.Controls.Add(this.textBox14);
-            this.panel2.Controls.Add(this.textBox15);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(182, 32);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(93, 141);
-            this.panel2.TabIndex = 16;
+            this.HighRegisters.BackColor = System.Drawing.Color.Black;
+            this.HighRegisters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HighRegisters.Controls.Add(this.label12);
+            this.HighRegisters.Controls.Add(this.textBox12);
+            this.HighRegisters.Controls.Add(this.label13);
+            this.HighRegisters.Controls.Add(this.textBox13);
+            this.HighRegisters.Controls.Add(this.textBox14);
+            this.HighRegisters.Controls.Add(this.textBox15);
+            this.HighRegisters.Controls.Add(this.label14);
+            this.HighRegisters.Controls.Add(this.label15);
+            this.HighRegisters.ForeColor = System.Drawing.Color.Black;
+            this.HighRegisters.Location = new System.Drawing.Point(182, 32);
+            this.HighRegisters.Name = "HighRegisters";
+            this.HighRegisters.Size = new System.Drawing.Size(93, 141);
+            this.HighRegisters.TabIndex = 16;
             // 
             // label12
             // 
@@ -266,7 +270,9 @@ namespace Intel_8085
             // 
             // textBox12
             // 
+            this.textBox12.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox12.Location = new System.Drawing.Point(42, 15);
+            this.textBox12.MaxLength = 2;
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(34, 23);
             this.textBox12.TabIndex = 8;
@@ -283,21 +289,27 @@ namespace Intel_8085
             // 
             // textBox13
             // 
+            this.textBox13.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox13.Location = new System.Drawing.Point(42, 44);
+            this.textBox13.MaxLength = 2;
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(34, 23);
             this.textBox13.TabIndex = 12;
             // 
             // textBox14
             // 
+            this.textBox14.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox14.Location = new System.Drawing.Point(42, 73);
+            this.textBox14.MaxLength = 2;
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(34, 23);
             this.textBox14.TabIndex = 11;
             // 
             // textBox15
             // 
+            this.textBox15.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox15.Location = new System.Drawing.Point(42, 102);
+            this.textBox15.MaxLength = 2;
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(34, 23);
             this.textBox15.TabIndex = 9;
@@ -322,23 +334,23 @@ namespace Intel_8085
             this.label15.TabIndex = 10;
             this.label15.Text = "AH";
             // 
-            // panel1
+            // LowRegisters
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.textBox9);
-            this.panel1.Controls.Add(this.textBox10);
-            this.panel1.Controls.Add(this.textBox11);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(281, 32);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(93, 141);
-            this.panel1.TabIndex = 17;
+            this.LowRegisters.BackColor = System.Drawing.Color.Black;
+            this.LowRegisters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LowRegisters.Controls.Add(this.label8);
+            this.LowRegisters.Controls.Add(this.textBox8);
+            this.LowRegisters.Controls.Add(this.label9);
+            this.LowRegisters.Controls.Add(this.textBox9);
+            this.LowRegisters.Controls.Add(this.textBox10);
+            this.LowRegisters.Controls.Add(this.textBox11);
+            this.LowRegisters.Controls.Add(this.label10);
+            this.LowRegisters.Controls.Add(this.label11);
+            this.LowRegisters.ForeColor = System.Drawing.Color.Black;
+            this.LowRegisters.Location = new System.Drawing.Point(281, 32);
+            this.LowRegisters.Name = "LowRegisters";
+            this.LowRegisters.Size = new System.Drawing.Size(93, 141);
+            this.LowRegisters.TabIndex = 17;
             // 
             // label8
             // 
@@ -352,7 +364,9 @@ namespace Intel_8085
             // 
             // textBox8
             // 
+            this.textBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox8.Location = new System.Drawing.Point(42, 15);
+            this.textBox8.MaxLength = 2;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(34, 23);
             this.textBox8.TabIndex = 8;
@@ -369,21 +383,27 @@ namespace Intel_8085
             // 
             // textBox9
             // 
+            this.textBox9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox9.Location = new System.Drawing.Point(42, 44);
+            this.textBox9.MaxLength = 2;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(34, 23);
             this.textBox9.TabIndex = 12;
             // 
             // textBox10
             // 
+            this.textBox10.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox10.Location = new System.Drawing.Point(42, 73);
+            this.textBox10.MaxLength = 2;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(34, 23);
             this.textBox10.TabIndex = 11;
             // 
             // textBox11
             // 
+            this.textBox11.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox11.Location = new System.Drawing.Point(42, 102);
+            this.textBox11.MaxLength = 2;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(34, 23);
             this.textBox11.TabIndex = 9;
@@ -434,6 +454,7 @@ namespace Intel_8085
             this.ExchangeButton.TabIndex = 21;
             this.ExchangeButton.Text = "Exchange";
             this.ExchangeButton.UseVisualStyleBackColor = true;
+            this.ExchangeButton.Click += new System.EventHandler(this.ExchangeButton_Click);
             // 
             // panel3
             // 
@@ -447,14 +468,15 @@ namespace Intel_8085
             this.panel3.Size = new System.Drawing.Size(124, 141);
             this.panel3.TabIndex = 22;
             // 
-            // MoveButton
+            // RandomButton
             // 
-            this.MoveButton.Location = new System.Drawing.Point(15, 44);
-            this.MoveButton.Name = "MoveButton";
-            this.MoveButton.Size = new System.Drawing.Size(93, 23);
-            this.MoveButton.TabIndex = 22;
-            this.MoveButton.Text = "Move";
-            this.MoveButton.UseVisualStyleBackColor = true;
+            this.RandomButton.Location = new System.Drawing.Point(15, 102);
+            this.RandomButton.Name = "RandomButton";
+            this.RandomButton.Size = new System.Drawing.Size(93, 23);
+            this.RandomButton.TabIndex = 24;
+            this.RandomButton.Text = "Random";
+            this.RandomButton.UseVisualStyleBackColor = true;
+            this.RandomButton.Click += new System.EventHandler(this.RandomButton_Click);
             // 
             // ResetButton
             // 
@@ -465,35 +487,35 @@ namespace Intel_8085
             this.ResetButton.Text = "Reset";
             this.ResetButton.UseVisualStyleBackColor = true;
             // 
-            // RandomButton
+            // MoveButton
             // 
-            this.RandomButton.Location = new System.Drawing.Point(15, 102);
-            this.RandomButton.Name = "RandomButton";
-            this.RandomButton.Size = new System.Drawing.Size(93, 23);
-            this.RandomButton.TabIndex = 24;
-            this.RandomButton.Text = "Random";
-            this.RandomButton.UseVisualStyleBackColor = true;
+            this.MoveButton.Location = new System.Drawing.Point(15, 44);
+            this.MoveButton.Name = "MoveButton";
+            this.MoveButton.Size = new System.Drawing.Size(93, 23);
+            this.MoveButton.TabIndex = 22;
+            this.MoveButton.Text = "Move";
+            this.MoveButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(590, 447);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.FirstRegisterComboBox);
             this.Controls.Add(this.SecondRegisterComboBox);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.LowRegisters);
+            this.Controls.Add(this.HighRegisters);
             this.Controls.Add(this.Registers);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Registers.ResumeLayout(false);
             this.Registers.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.HighRegisters.ResumeLayout(false);
+            this.HighRegisters.PerformLayout();
+            this.LowRegisters.ResumeLayout(false);
+            this.LowRegisters.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -518,7 +540,7 @@ namespace Intel_8085
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel HighRegisters;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label13;
@@ -527,7 +549,7 @@ namespace Intel_8085
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel LowRegisters;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label9;

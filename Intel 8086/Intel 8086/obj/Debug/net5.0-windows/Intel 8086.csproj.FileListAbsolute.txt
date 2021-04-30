@@ -1,0 +1,19 @@
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\bin\Debug\net5.0-windows\Intel 8086.exe
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\bin\Debug\net5.0-windows\Intel 8086.deps.json
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\bin\Debug\net5.0-windows\Intel 8086.runtimeconfig.json
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\bin\Debug\net5.0-windows\Intel 8086.runtimeconfig.dev.json
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\bin\Debug\net5.0-windows\Intel 8086.dll
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\bin\Debug\net5.0-windows\ref\Intel 8086.dll
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\bin\Debug\net5.0-windows\Intel 8086.pdb
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\obj\Debug\net5.0-windows\Intel_8085.Form1.resources
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\obj\Debug\net5.0-windows\Intel_8085.Properties.Resources.resources
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\obj\Debug\net5.0-windows\Intel 8086.csproj.GenerateResource.cache
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\obj\Debug\net5.0-windows\Intel 8086.GeneratedMSBuildEditorConfig.editorconfig
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\obj\Debug\net5.0-windows\Intel 8086.AssemblyInfoInputs.cache
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\obj\Debug\net5.0-windows\Intel 8086.AssemblyInfo.cs
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\obj\Debug\net5.0-windows\Intel 8086.csproj.CoreCompileInputs.cache
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\obj\Debug\net5.0-windows\Intel 8086.dll
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\obj\Debug\net5.0-windows\ref\Intel 8086.dll
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\obj\Debug\net5.0-windows\Intel 8086.pdb
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\obj\Debug\net5.0-windows\Intel 8086.genruntimeconfig.cache
+D:\WSEII\Intel8086\Intel 8086\Intel 8086\obj\Debug\net5.0-windows\Intel 8086.csprojAssemblyReference.cache
