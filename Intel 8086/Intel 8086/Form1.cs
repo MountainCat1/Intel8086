@@ -25,7 +25,7 @@ namespace Intel_8085
         }
 
         private void SecondRegisterComboBox_SelectedValueChanged(object sender, EventArgs e) {
-            secondRegister = FirstRegisterComboBox.SelectedItem as Register;
+            secondRegister = SecondRegisterComboBox.SelectedItem as Register;
         }
 
         private void FirstRegisterComboBox_SelectedValueChanged(object sender, EventArgs e) {
@@ -57,7 +57,7 @@ namespace Intel_8085
             {
                 if (v is TextBox box)
                 {
-                    Register.AllRegisters[i].HightRegisterInput = box;
+                    Register.AllRegisters[i].HightRegister.Input = box;
                     box.Text = Register.AllRegisters[i].Name;
                     i++;
                 }
@@ -69,7 +69,7 @@ namespace Intel_8085
             {
                 if (v is TextBox box)
                 {
-                    Register.AllRegisters[i].LowRegisterInput = box;
+                    Register.AllRegisters[i].LowRegister.Input = box;
                     box.Text = Register.AllRegisters[i].Name;
                     i++;
                 }
@@ -79,6 +79,8 @@ namespace Intel_8085
                 FirstRegisterComboBox.Items.Add(register);
                 SecondRegisterComboBox.Items.Add(register);
             }
+
+            Reset();
         }
 
         private void RandomButton_Click(object sender, EventArgs e) {
@@ -89,9 +91,34 @@ namespace Intel_8085
         }
 
         private void ExchangeButton_Click(object sender, EventArgs e) {
-            Register temp = new Register("temp", false);
-            firstRegister = secondRegister;
-            secondRegister = temp;
+            if(firstRegister == null || secondRegister == null)
+            {
+                return;
+            }
+
+            string temp = firstRegister.Value;
+            firstRegister.Set(secondRegister.Value);
+            secondRegister.Set(temp);
+        }
+
+        private void ResetButton_Click(object sender, EventArgs e) {
+            Reset();
+        }
+
+        private void Reset() {
+            foreach (Register register in Register.AllRegisters)
+            {
+                register.Reset();
+            }
+        }
+
+        private void MoveButton_Click(object sender, EventArgs e) {
+            if (firstRegister == null || secondRegister == null)
+            {
+                return;
+            }
+
+            firstRegister.Set(secondRegister.Value);
         }
     }
 }

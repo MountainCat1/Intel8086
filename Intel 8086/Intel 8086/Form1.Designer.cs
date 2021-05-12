@@ -87,7 +87,7 @@ namespace Intel_8085
             // ARegisterLabel
             // 
             this.ARegisterLabel.AutoSize = true;
-            this.ARegisterLabel.ForeColor = System.Drawing.Color.Lime;
+            this.ARegisterLabel.ForeColor = System.Drawing.Color.Black;
             this.ARegisterLabel.Location = new System.Drawing.Point(14, 18);
             this.ARegisterLabel.Name = "ARegisterLabel";
             this.ARegisterLabel.Size = new System.Drawing.Size(22, 15);
@@ -96,8 +96,7 @@ namespace Intel_8085
             // 
             // Registers
             // 
-            this.Registers.BackColor = System.Drawing.Color.Black;
-            this.Registers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Registers.BackColor = System.Drawing.Color.CornflowerBlue;
             this.Registers.Controls.Add(this.label3);
             this.Registers.Controls.Add(this.textBox3);
             this.Registers.Controls.Add(this.label2);
@@ -107,15 +106,15 @@ namespace Intel_8085
             this.Registers.Controls.Add(this.label1);
             this.Registers.Controls.Add(this.ARegisterLabel);
             this.Registers.ForeColor = System.Drawing.Color.Black;
-            this.Registers.Location = new System.Drawing.Point(54, 32);
+            this.Registers.Location = new System.Drawing.Point(122, 57);
             this.Registers.Name = "Registers";
-            this.Registers.Size = new System.Drawing.Size(122, 141);
+            this.Registers.Size = new System.Drawing.Size(117, 141);
             this.Registers.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Lime;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(14, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 15);
@@ -135,7 +134,7 @@ namespace Intel_8085
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Lime;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(14, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(22, 15);
@@ -165,7 +164,7 @@ namespace Intel_8085
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Lime;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(14, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 15);
@@ -242,8 +241,7 @@ namespace Intel_8085
             // 
             // HighRegisters
             // 
-            this.HighRegisters.BackColor = System.Drawing.Color.Black;
-            this.HighRegisters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HighRegisters.BackColor = System.Drawing.Color.CornflowerBlue;
             this.HighRegisters.Controls.Add(this.label12);
             this.HighRegisters.Controls.Add(this.textBox12);
             this.HighRegisters.Controls.Add(this.label13);
@@ -253,7 +251,7 @@ namespace Intel_8085
             this.HighRegisters.Controls.Add(this.label14);
             this.HighRegisters.Controls.Add(this.label15);
             this.HighRegisters.ForeColor = System.Drawing.Color.Black;
-            this.HighRegisters.Location = new System.Drawing.Point(182, 32);
+            this.HighRegisters.Location = new System.Drawing.Point(245, 57);
             this.HighRegisters.Name = "HighRegisters";
             this.HighRegisters.Size = new System.Drawing.Size(93, 141);
             this.HighRegisters.TabIndex = 16;
@@ -261,7 +259,7 @@ namespace Intel_8085
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.Lime;
+            this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(14, 105);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(24, 15);
@@ -280,7 +278,7 @@ namespace Intel_8085
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.Lime;
+            this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(14, 76);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(24, 15);
@@ -317,7 +315,7 @@ namespace Intel_8085
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.Lime;
+            this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(14, 47);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(23, 15);
@@ -327,7 +325,7 @@ namespace Intel_8085
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.Color.Lime;
+            this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.Location = new System.Drawing.Point(14, 18);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(24, 15);
@@ -336,8 +334,7 @@ namespace Intel_8085
             // 
             // LowRegisters
             // 
-            this.LowRegisters.BackColor = System.Drawing.Color.Black;
-            this.LowRegisters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LowRegisters.BackColor = System.Drawing.Color.CornflowerBlue;
             this.LowRegisters.Controls.Add(this.label8);
             this.LowRegisters.Controls.Add(this.textBox8);
             this.LowRegisters.Controls.Add(this.label9);
@@ -347,7 +344,7 @@ namespace Intel_8085
             this.LowRegisters.Controls.Add(this.label10);
             this.LowRegisters.Controls.Add(this.label11);
             this.LowRegisters.ForeColor = System.Drawing.Color.Black;
-            this.LowRegisters.Location = new System.Drawing.Point(281, 32);
+            this.LowRegisters.Location = new System.Drawing.Point(344, 57);
             this.LowRegisters.Name = "LowRegisters";
             this.LowRegisters.Size = new System.Drawing.Size(93, 141);
             this.LowRegisters.TabIndex = 17;
@@ -355,7 +352,7 @@ namespace Intel_8085
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Lime;
+            this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(14, 105);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(21, 15);
@@ -374,7 +371,7 @@ namespace Intel_8085
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Lime;
+            this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(14, 76);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(21, 15);
@@ -411,7 +408,7 @@ namespace Intel_8085
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.Lime;
+            this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(14, 47);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(20, 15);
@@ -421,7 +418,7 @@ namespace Intel_8085
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.Lime;
+            this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(14, 18);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(21, 15);
@@ -432,7 +429,7 @@ namespace Intel_8085
             // 
             this.SecondRegisterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SecondRegisterComboBox.FormattingEnabled = true;
-            this.SecondRegisterComboBox.Location = new System.Drawing.Point(182, 243);
+            this.SecondRegisterComboBox.Location = new System.Drawing.Point(344, 268);
             this.SecondRegisterComboBox.Name = "SecondRegisterComboBox";
             this.SecondRegisterComboBox.Size = new System.Drawing.Size(121, 23);
             this.SecondRegisterComboBox.TabIndex = 19;
@@ -441,7 +438,7 @@ namespace Intel_8085
             // 
             this.FirstRegisterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FirstRegisterComboBox.FormattingEnabled = true;
-            this.FirstRegisterComboBox.Location = new System.Drawing.Point(55, 243);
+            this.FirstRegisterComboBox.Location = new System.Drawing.Point(217, 268);
             this.FirstRegisterComboBox.Name = "FirstRegisterComboBox";
             this.FirstRegisterComboBox.Size = new System.Drawing.Size(121, 23);
             this.FirstRegisterComboBox.TabIndex = 20;
@@ -458,12 +455,12 @@ namespace Intel_8085
             // 
             // panel3
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel3.Controls.Add(this.RandomButton);
             this.panel3.Controls.Add(this.ResetButton);
             this.panel3.Controls.Add(this.MoveButton);
             this.panel3.Controls.Add(this.ExchangeButton);
-            this.panel3.Location = new System.Drawing.Point(380, 32);
+            this.panel3.Location = new System.Drawing.Point(443, 57);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(124, 141);
             this.panel3.TabIndex = 22;
@@ -486,6 +483,7 @@ namespace Intel_8085
             this.ResetButton.TabIndex = 23;
             this.ResetButton.Text = "Reset";
             this.ResetButton.UseVisualStyleBackColor = true;
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
             // MoveButton
             // 
@@ -495,13 +493,14 @@ namespace Intel_8085
             this.MoveButton.TabIndex = 22;
             this.MoveButton.Text = "Move";
             this.MoveButton.UseVisualStyleBackColor = true;
+            this.MoveButton.Click += new System.EventHandler(this.MoveButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(590, 447);
+            this.BackColor = System.Drawing.Color.RoyalBlue;
+            this.ClientSize = new System.Drawing.Size(714, 447);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.FirstRegisterComboBox);
             this.Controls.Add(this.SecondRegisterComboBox);

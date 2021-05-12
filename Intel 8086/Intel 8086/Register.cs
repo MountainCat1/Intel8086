@@ -10,41 +10,44 @@ namespace Intel_8085
 
         /// Properties
         /// 
-        private TextBox hightRegisterInput;
-        private TextBox lowRegisterInput;
-
-        public TextBox HightRegisterInput { 
-            get => hightRegisterInput;
-            set { 
-                if(hightRegisterInput != null)
-                    hightRegisterInput.TextChanged -= TextChanged;
-
-                hightRegisterInput = value;
-                hightRegisterInput.TextChanged += TextChanged;
-            }
-        }
-        public TextBox LowRegisterInput { 
-            get => lowRegisterInput;
-            set {
-                if (lowRegisterInput != null)
-                    lowRegisterInput.TextChanged -= TextChanged;
-
-                lowRegisterInput = value;
-                lowRegisterInput.TextChanged += TextChanged;
-            }
-        }
+        public SubRegister HightRegister { get; set; }
+        public SubRegister LowRegister { get; set; }
         public TextBox RegisterDisplay {
             get; set;
         }
 
         public string Name { get; set; } 
 
-        public string Value { get => HightRegisterInput.Text + LowRegisterInput.Text; }
+        public string Value { get => value;}
+        private string value = "0000";
+
+        ///Sub-Classes
+        ///
+        public class SubRegister
+        {
+            public Register Register { get; set; }
+
+            private TextBox input;
+            public TextBox Input {
+                get => input;
+                set {
+                    if (input != null)
+                        input.TextChanged -= Register.TextChanged;
+
+                    input = value;
+                    input.TextChanged += Register.TextChanged;
+                }
+            }
+            public string Name { get; set; }
+        }
 
         /// Methods
         /// 
         public Register(string name, bool addToAllRegisters = true) {
             Name = name;
+
+            LowRegister = new SubRegister() { Name = "L", Register = this };
+            HightRegister = new SubRegister() { Name = "H", Register = this };
 
             if(addToAllRegisters)
                 AllRegisters.Add(this);
@@ -59,17 +62,22 @@ namespace Intel_8085
 
         public void Randomize() {
             char[] lowRegister = { GetRandomRegisterCharacter(), GetRandomRegisterCharacter() };
-            LowRegisterInput.Text = new string(lowRegister);
+            LowRegister.Input.Text = new string(lowRegister);
             char[] hightRegister = { GetRandomRegisterCharacter(), GetRandomRegisterCharacter() };
-            HightRegisterInput.Text = new string(hightRegister);
+            HightRegister.Input.Text = new string(hightRegister);
+        }
+
+        public void Reset() {
+            LowRegister.Input.Text = "00";
+            HightRegister.Input.Text = "00";
         }
 
         public void Set(string value) {
-            if (value.Length > 4 || value.Length == 0)
+            if (value.Length != 4)
                 throw new Exception("Register value has to have length of 4");
 
-            hightRegisterInput.Text = value.Substring(0, 2);
-            lowRegisterInput.Text = value.Substring(1, 2);
+            HightRegister.Input.Text = value.Substring(0, 2);
+            LowRegister.Input.Text = value.Substring(2, 2);
         }
 
         private char GetRandomRegisterCharacter() {
@@ -93,8 +101,10 @@ namespace Intel_8085
         }
 
         private void TextChanged(object sender, EventArgs e) {
-            if(HightRegisterInput.Text.Length == 2 && LowRegisterInput.Text.Length == 2) {
-                RegisterDisplay.Text = HightRegisterInput.Text + LowRegisterInput.Text;
+            if(HightRegister.Input.Text.Length == 2 && LowRegister.Input.Text.Length == 2) {
+                value = HightRegister.Input.Text + LowRegister.Input.Text;
+
+                RegisterDisplay.Text = value;
             }
         }
 
