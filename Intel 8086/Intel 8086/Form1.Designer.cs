@@ -500,7 +500,7 @@ namespace Intel_8085
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(714, 447);
+            this.ClientSize = new System.Drawing.Size(722, 427);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.FirstRegisterComboBox);
             this.Controls.Add(this.SecondRegisterComboBox);

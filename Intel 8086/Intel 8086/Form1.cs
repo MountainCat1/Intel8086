@@ -15,6 +15,9 @@ namespace Intel_8085
         private Register firstRegister;
         private Register secondRegister;
 
+        private Register.SubRegister firstSubRegister;
+        private Register.SubRegister secondSubRegister;
+
         public Form1() {
             InitializeComponent();
 
@@ -25,11 +28,29 @@ namespace Intel_8085
         }
 
         private void SecondRegisterComboBox_SelectedValueChanged(object sender, EventArgs e) {
-            secondRegister = SecondRegisterComboBox.SelectedItem as Register;
+            secondRegister = null;
+            secondSubRegister = null;
+
+            object obj = SecondRegisterComboBox.SelectedItem;
+
+
+            if (obj is Register)
+                secondRegister = obj as Register;
+            else if (obj is Register.SubRegister)
+                secondSubRegister = obj as Register.SubRegister;
         }
 
         private void FirstRegisterComboBox_SelectedValueChanged(object sender, EventArgs e) {
-            firstRegister = FirstRegisterComboBox.SelectedItem as Register;
+            firstRegister = null;
+            firstSubRegister = null;
+
+            object obj = FirstRegisterComboBox.SelectedItem;
+
+
+            if (obj is Register)
+                firstRegister = obj as Register;
+            else if (obj is Register.SubRegister)
+                firstSubRegister = obj as Register.SubRegister;
         }
 
         private void Start() {
@@ -80,6 +101,15 @@ namespace Intel_8085
                 SecondRegisterComboBox.Items.Add(register);
             }
 
+            foreach (Register register in Register.AllRegisters)
+            {
+                FirstRegisterComboBox.Items.Add(register.HightRegister);
+                FirstRegisterComboBox.Items.Add(register.LowRegister);
+
+                SecondRegisterComboBox.Items.Add(register.HightRegister);
+                SecondRegisterComboBox.Items.Add(register.LowRegister);
+            }
+
             Reset();
         }
 
@@ -91,14 +121,17 @@ namespace Intel_8085
         }
 
         private void ExchangeButton_Click(object sender, EventArgs e) {
-            if(firstRegister == null || secondRegister == null)
+            if(firstRegister != null && secondRegister != null)
             {
-                return;
+                string temp = firstRegister.Value;
+                firstRegister.Set(secondRegister.Value);
+                secondRegister.Set(temp);
+            }else if (firstSubRegister != null && secondSubRegister != null)
+            {
+                string temp = firstSubRegister.Value;
+                firstSubRegister.Set(secondSubRegister.Value);
+                secondSubRegister.Set(temp);
             }
-
-            string temp = firstRegister.Value;
-            firstRegister.Set(secondRegister.Value);
-            secondRegister.Set(temp);
         }
 
         private void ResetButton_Click(object sender, EventArgs e) {
@@ -113,12 +146,14 @@ namespace Intel_8085
         }
 
         private void MoveButton_Click(object sender, EventArgs e) {
-            if (firstRegister == null || secondRegister == null)
-            {
-                return;
-            }
 
-            firstRegister.Set(secondRegister.Value);
+            if (firstRegister != null && secondRegister != null)
+            {
+                firstRegister.Set(secondRegister.Value);
+            } else if (firstSubRegister != null && secondSubRegister != null)
+            {
+                firstSubRegister.Set(secondSubRegister.Value);
+            }
         }
     }
 }

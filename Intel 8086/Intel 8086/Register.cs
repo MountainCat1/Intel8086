@@ -29,7 +29,7 @@ namespace Intel_8085
 
             private TextBox input;
             public TextBox Input {
-                get => input;
+                private get => input;
                 set {
                     if (input != null)
                         input.TextChanged -= Register.TextChanged;
@@ -39,6 +39,18 @@ namespace Intel_8085
                 }
             }
             public string Name { get; set; }
+            public string Value { get => input.Text; set => Set(value); }
+
+            public override string ToString() {
+                return Register.Name + Name;
+            }
+
+            public void Set(string value) {
+                if (value.Length != 2)
+                    throw new Exception("SubRegister value has to have length of 2");
+
+                input.Text = value;
+            }
         }
 
         /// Methods
@@ -57,27 +69,27 @@ namespace Intel_8085
         }
 
         public override string ToString() {
-            return Name;
+            return Name + "X";
         }
 
         public void Randomize() {
             char[] lowRegister = { GetRandomRegisterCharacter(), GetRandomRegisterCharacter() };
-            LowRegister.Input.Text = new string(lowRegister);
+            LowRegister.Value = new string(lowRegister);
             char[] hightRegister = { GetRandomRegisterCharacter(), GetRandomRegisterCharacter() };
-            HightRegister.Input.Text = new string(hightRegister);
+            HightRegister.Value = new string(hightRegister);
         }
 
         public void Reset() {
-            LowRegister.Input.Text = "00";
-            HightRegister.Input.Text = "00";
+            LowRegister.Value = "00";
+            HightRegister.Value = "00";
         }
 
         public void Set(string value) {
             if (value.Length != 4)
                 throw new Exception("Register value has to have length of 4");
 
-            HightRegister.Input.Text = value.Substring(0, 2);
-            LowRegister.Input.Text = value.Substring(2, 2);
+            HightRegister.Value = value.Substring(0, 2);
+            LowRegister.Value = value.Substring(2, 2);
         }
 
         private char GetRandomRegisterCharacter() {
@@ -101,8 +113,8 @@ namespace Intel_8085
         }
 
         private void TextChanged(object sender, EventArgs e) {
-            if(HightRegister.Input.Text.Length == 2 && LowRegister.Input.Text.Length == 2) {
-                value = HightRegister.Input.Text + LowRegister.Input.Text;
+            if(HightRegister.Value.Length == 2 && LowRegister.Value.Length == 2) {
+                value = HightRegister.Value + LowRegister.Value;
 
                 RegisterDisplay.Text = value;
             }
