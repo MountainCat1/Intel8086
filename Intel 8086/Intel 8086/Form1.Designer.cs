@@ -61,7 +61,6 @@ namespace Intel_8085
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.SecondRegisterComboBox = new System.Windows.Forms.ComboBox();
             this.FirstRegisterComboBox = new System.Windows.Forms.ComboBox();
             this.ExchangeButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -69,6 +68,8 @@ namespace Intel_8085
             this.ResetButton = new System.Windows.Forms.Button();
             this.MoveButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.SecondRegisterComboBox = new System.Windows.Forms.ComboBox();
+            this.ErrorMessage = new System.Windows.Forms.Label();
             this.Registers.SuspendLayout();
             this.HighRegisters.SuspendLayout();
             this.LowRegisters.SuspendLayout();
@@ -109,9 +110,10 @@ namespace Intel_8085
             this.Registers.Controls.Add(this.ARegisterLabel);
             this.Registers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Registers.ForeColor = System.Drawing.Color.Black;
-            this.Registers.Location = new System.Drawing.Point(182, 53);
+            this.Registers.Location = new System.Drawing.Point(607, 65);
+            this.Registers.MinimumSize = new System.Drawing.Size(100, 100);
             this.Registers.Name = "Registers";
-            this.Registers.Size = new System.Drawing.Size(184, 241);
+            this.Registers.Size = new System.Drawing.Size(235, 304);
             this.Registers.TabIndex = 2;
             // 
             // label3
@@ -255,9 +257,10 @@ namespace Intel_8085
             this.HighRegisters.Controls.Add(this.label15);
             this.HighRegisters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HighRegisters.ForeColor = System.Drawing.Color.Black;
-            this.HighRegisters.Location = new System.Drawing.Point(517, 53);
+            this.HighRegisters.Location = new System.Drawing.Point(367, 65);
+            this.HighRegisters.MinimumSize = new System.Drawing.Size(100, 100);
             this.HighRegisters.Name = "HighRegisters";
-            this.HighRegisters.Size = new System.Drawing.Size(158, 241);
+            this.HighRegisters.Size = new System.Drawing.Size(114, 304);
             this.HighRegisters.TabIndex = 16;
             // 
             // label12
@@ -349,9 +352,10 @@ namespace Intel_8085
             this.LowRegisters.Controls.Add(this.label11);
             this.LowRegisters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LowRegisters.ForeColor = System.Drawing.Color.Black;
-            this.LowRegisters.Location = new System.Drawing.Point(372, 53);
+            this.LowRegisters.Location = new System.Drawing.Point(487, 65);
+            this.LowRegisters.MinimumSize = new System.Drawing.Size(100, 100);
             this.LowRegisters.Name = "LowRegisters";
-            this.LowRegisters.Size = new System.Drawing.Size(139, 241);
+            this.LowRegisters.Size = new System.Drawing.Size(114, 304);
             this.LowRegisters.TabIndex = 17;
             // 
             // label8
@@ -430,29 +434,23 @@ namespace Intel_8085
             this.label11.TabIndex = 10;
             this.label11.Text = "AL";
             // 
-            // SecondRegisterComboBox
-            // 
-            this.SecondRegisterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SecondRegisterComboBox.FormattingEnabled = true;
-            this.SecondRegisterComboBox.Location = new System.Drawing.Point(517, 300);
-            this.SecondRegisterComboBox.Name = "SecondRegisterComboBox";
-            this.SecondRegisterComboBox.Size = new System.Drawing.Size(158, 23);
-            this.SecondRegisterComboBox.TabIndex = 19;
-            // 
             // FirstRegisterComboBox
             // 
+            this.FirstRegisterComboBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.FirstRegisterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FirstRegisterComboBox.FormattingEnabled = true;
-            this.FirstRegisterComboBox.Location = new System.Drawing.Point(372, 300);
+            this.FirstRegisterComboBox.Location = new System.Drawing.Point(367, 375);
             this.FirstRegisterComboBox.Name = "FirstRegisterComboBox";
-            this.FirstRegisterComboBox.Size = new System.Drawing.Size(139, 23);
+            this.FirstRegisterComboBox.Size = new System.Drawing.Size(114, 23);
             this.FirstRegisterComboBox.TabIndex = 20;
             // 
             // ExchangeButton
             // 
-            this.ExchangeButton.Location = new System.Drawing.Point(15, 15);
+            this.ExchangeButton.Location = new System.Drawing.Point(15, 142);
+            this.ExchangeButton.Margin = new System.Windows.Forms.Padding(10);
             this.ExchangeButton.Name = "ExchangeButton";
-            this.ExchangeButton.Size = new System.Drawing.Size(103, 23);
+            this.ExchangeButton.Padding = new System.Windows.Forms.Padding(10);
+            this.ExchangeButton.Size = new System.Drawing.Size(209, 49);
             this.ExchangeButton.TabIndex = 21;
             this.ExchangeButton.Text = "Exchange";
             this.ExchangeButton.UseVisualStyleBackColor = true;
@@ -466,16 +464,19 @@ namespace Intel_8085
             this.panel3.Controls.Add(this.MoveButton);
             this.panel3.Controls.Add(this.ExchangeButton);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(681, 53);
+            this.panel3.Location = new System.Drawing.Point(126, 65);
+            this.panel3.MinimumSize = new System.Drawing.Size(100, 100);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(196, 241);
+            this.panel3.Size = new System.Drawing.Size(235, 304);
             this.panel3.TabIndex = 22;
             // 
             // RandomButton
             // 
-            this.RandomButton.Location = new System.Drawing.Point(15, 102);
+            this.RandomButton.Location = new System.Drawing.Point(15, 29);
+            this.RandomButton.Margin = new System.Windows.Forms.Padding(10);
             this.RandomButton.Name = "RandomButton";
-            this.RandomButton.Size = new System.Drawing.Size(103, 23);
+            this.RandomButton.Padding = new System.Windows.Forms.Padding(10);
+            this.RandomButton.Size = new System.Drawing.Size(209, 53);
             this.RandomButton.TabIndex = 24;
             this.RandomButton.Text = "Random";
             this.RandomButton.UseVisualStyleBackColor = true;
@@ -483,9 +484,11 @@ namespace Intel_8085
             // 
             // ResetButton
             // 
-            this.ResetButton.Location = new System.Drawing.Point(15, 73);
+            this.ResetButton.Location = new System.Drawing.Point(15, 197);
+            this.ResetButton.Margin = new System.Windows.Forms.Padding(10);
             this.ResetButton.Name = "ResetButton";
-            this.ResetButton.Size = new System.Drawing.Size(103, 23);
+            this.ResetButton.Padding = new System.Windows.Forms.Padding(10);
+            this.ResetButton.Size = new System.Drawing.Size(209, 50);
             this.ResetButton.TabIndex = 23;
             this.ResetButton.Text = "Reset";
             this.ResetButton.UseVisualStyleBackColor = true;
@@ -493,9 +496,11 @@ namespace Intel_8085
             // 
             // MoveButton
             // 
-            this.MoveButton.Location = new System.Drawing.Point(15, 44);
+            this.MoveButton.Location = new System.Drawing.Point(15, 88);
+            this.MoveButton.Margin = new System.Windows.Forms.Padding(10);
             this.MoveButton.Name = "MoveButton";
-            this.MoveButton.Size = new System.Drawing.Size(103, 23);
+            this.MoveButton.Padding = new System.Windows.Forms.Padding(10);
+            this.MoveButton.Size = new System.Drawing.Size(209, 48);
             this.MoveButton.TabIndex = 22;
             this.MoveButton.Text = "Move";
             this.MoveButton.UseVisualStyleBackColor = true;
@@ -506,35 +511,59 @@ namespace Intel_8085
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 179F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 145F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.8718F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.1282F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 195F));
-            this.tableLayoutPanel1.Controls.Add(this.FirstRegisterComboBox, 2, 2);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.Controls.Add(this.panel3, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.LowRegisters, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.HighRegisters, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.Registers, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.SecondRegisterComboBox, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.SecondRegisterComboBox, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.ErrorMessage, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.FirstRegisterComboBox, 3, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.81124F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.18876F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1076, 538);
+            this.tableLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(965, 620);
             this.tableLayoutPanel1.TabIndex = 23;
+            // 
+            // SecondRegisterComboBox
+            // 
+            this.SecondRegisterComboBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SecondRegisterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SecondRegisterComboBox.FormattingEnabled = true;
+            this.SecondRegisterComboBox.Location = new System.Drawing.Point(487, 375);
+            this.SecondRegisterComboBox.Name = "SecondRegisterComboBox";
+            this.SecondRegisterComboBox.Size = new System.Drawing.Size(114, 23);
+            this.SecondRegisterComboBox.TabIndex = 23;
+            // 
+            // ErrorMessage
+            // 
+            this.ErrorMessage.AutoSize = true;
+            this.ErrorMessage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ErrorMessage.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ErrorMessage.ForeColor = System.Drawing.Color.LightCoral;
+            this.ErrorMessage.Location = new System.Drawing.Point(607, 372);
+            this.ErrorMessage.Name = "ErrorMessage";
+            this.ErrorMessage.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ErrorMessage.Size = new System.Drawing.Size(235, 28);
+            this.ErrorMessage.TabIndex = 24;
+            this.ErrorMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClientSize = new System.Drawing.Size(1076, 538);
+            this.ClientSize = new System.Drawing.Size(965, 620);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -546,6 +575,7 @@ namespace Intel_8085
             this.LowRegisters.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -588,7 +618,6 @@ namespace Intel_8085
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox SecondRegisterComboBox;
         private System.Windows.Forms.ComboBox FirstRegisterComboBox;
         private System.Windows.Forms.Button ExchangeButton;
         private System.Windows.Forms.Panel panel3;
@@ -596,6 +625,8 @@ namespace Intel_8085
         private System.Windows.Forms.Button ResetButton;
         private System.Windows.Forms.Button MoveButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ComboBox SecondRegisterComboBox;
+        private System.Windows.Forms.Label ErrorMessage;
     }
 }
 

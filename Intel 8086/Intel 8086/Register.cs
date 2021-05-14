@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Intel_8085
 {
     class Register
     {
+        const string avaliableCharacters = "0123456789ABCDEF";
+
         public static List<Register> AllRegisters = new List<Register>();
 
         /// Properties
@@ -20,6 +23,8 @@ namespace Intel_8085
 
         public string Value { get => value;}
         private string value = "0000";
+
+        public bool CorrectRegisters { get; set; } = false;
 
         ///Sub-Classes
         ///
@@ -113,12 +118,29 @@ namespace Intel_8085
         }
 
         private void TextChanged(object sender, EventArgs e) {
-            if(HightRegister.Value.Length == 2 && LowRegister.Value.Length == 2) {
+            if(IsRegisterValueCorrect(HightRegister) && IsRegisterValueCorrect(LowRegister)) {
                 value = HightRegister.Value + LowRegister.Value;
 
                 RegisterDisplay.Text = value;
+                Form1.instance.ShowError(null);
+                CorrectRegisters = true;
+            } else
+            {
+                Form1.instance.ShowError("Niepoprawne wartości rejestrów.");
+                CorrectRegisters = false;
             }
         }
 
+        private bool IsRegisterValueCorrect(SubRegister subRegister) {
+            string value = subRegister.Value;
+            if (value.Length != 2)
+                return false;
+
+            foreach (var v in value)
+                if (!avaliableCharacters.ToCharArray().Contains(v))
+                    return false;
+
+            return true;
+        }
     }
 }

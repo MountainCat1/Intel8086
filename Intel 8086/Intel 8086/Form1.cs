@@ -5,6 +5,8 @@ namespace Intel_8085
 {
     public partial class Form1 : Form
     {
+        public static Form1 instance;
+
         private Register firstRegister;
         private Register secondRegister;
 
@@ -12,6 +14,8 @@ namespace Intel_8085
         private Register.SubRegister secondSubRegister;
 
         public Form1() {
+            instance = this;
+
             InitializeComponent();
 
             FirstRegisterComboBox.SelectedValueChanged += FirstRegisterComboBox_SelectedValueChanged;
@@ -116,14 +120,29 @@ namespace Intel_8085
         private void ExchangeButton_Click(object sender, EventArgs e) {
             if(firstRegister != null && secondRegister != null)
             {
+                if (!firstRegister.CorrectRegisters || !secondRegister.CorrectRegisters)
+                {
+                    ShowError("Niepoprawne wartości rejestrów.");
+                    return;
+                }
+                ShowError(null);
                 string temp = firstRegister.Value;
                 firstRegister.Set(secondRegister.Value);
                 secondRegister.Set(temp);
             }else if (firstSubRegister != null && secondSubRegister != null)
             {
+                if (!firstSubRegister.Register.CorrectRegisters || !secondSubRegister.Register.CorrectRegisters)
+                {
+                    ShowError("Niepoprawne wartości rejestrów.");
+                    return;
+                }
+                ShowError(null);
                 string temp = firstSubRegister.Value;
                 firstSubRegister.Set(secondSubRegister.Value);
                 secondSubRegister.Set(temp);
+            } else
+            {
+                ShowError("Proszę wybrać poprawne rejestry nie mieszane.");
             }
         }
 
@@ -139,14 +158,39 @@ namespace Intel_8085
         }
 
         private void MoveButton_Click(object sender, EventArgs e) {
+            
 
             if (firstRegister != null && secondRegister != null)
             {
+                if (!firstRegister.CorrectRegisters || !secondRegister.CorrectRegisters)
+                {
+                    ShowError("Niepoprawne wartości rejestrów.");
+                    return;
+                }
+
+                ShowError(null);
                 firstRegister.Set(secondRegister.Value);
             } else if (firstSubRegister != null && secondSubRegister != null)
             {
+                if (!firstSubRegister.Register.CorrectRegisters || !secondSubRegister.Register.CorrectRegisters)
+                {
+                    ShowError("Niepoprawne wartości rejestrów.");
+                    return;
+                }
+
+                ShowError(null);
                 firstSubRegister.Set(secondSubRegister.Value);
+            } else
+            {
+                ShowError("Proszę wybrać poprawne rejestry nie mieszane.");
             }
+        }
+
+        public void ShowError(string message) {
+            if (message == null)
+                message = "";
+
+            ErrorMessage.Text = message;
         }
     }
 }
